@@ -81,7 +81,6 @@ func run(allow []string) int {
 			return 1
 		}
 	}
-	fmt.Println("\nbye.")
 	return 0
 }
 
