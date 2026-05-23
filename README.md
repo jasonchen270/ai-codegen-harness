@@ -47,5 +47,4 @@ REJECTED: 1 violation(s):
 reverted to the pre-prompt state. nothing committed.
 
 > exit
-bye.
 ```
