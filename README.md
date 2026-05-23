@@ -33,18 +33,3 @@ Then type prompts at the `>` line. For each prompt:
    **out of bounds** → the whole prompt is reverted, nothing committed.
 
 You stay in the loop and keep prompting. Exit with `Ctrl-D` or `exit`.
-
-```
-> add a main entry point that prints the tasks
-running agent...
-accepted and committed (1 path(s)):
-  src/main.go
-
-> also create a top-level Makefile
-running agent...
-REJECTED: 1 violation(s):
-  Makefile: created a file outside the allowed paths [src/]
-reverted to the pre-prompt state. nothing committed.
-
-> exit
-```
