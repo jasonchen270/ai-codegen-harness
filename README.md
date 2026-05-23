@@ -61,15 +61,6 @@ reverted to the pre-prompt state. nothing committed.
 bye.
 ```
 
-## Layout
-
-```
-main.go                 CLI + the prompt loop
-internal/git            git wrappers (the enforcement boundary)
-internal/agent          the agent that shells out to the claude CLI
-internal/enforce        the judge: changeset vs allow-list
-```
-
 ## Notes
 
 - Requires the `claude` CLI on PATH and git.
