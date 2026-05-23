@@ -8,17 +8,6 @@ The agent (the `claude` CLI) writes files freely; the harness then inspects the
 result and enforces the constraint itself. A prompt that breaks it is reverted
 wholesale.
 
-## The rule (default-deny)
-
-The entire project is frozen and immutable, **except** the paths you allow.
-Any create, modify, or delete outside the allow-list is a violation.
-
-The rule does not live in a prompt. The allowed paths are passed to claude only
-as a hint; the real constraint is enforced by the harness after the agent runs,
-with **git as the boundary**: an accepted prompt is committed; a rejected prompt
-is wiped by reverting the working tree to the pre-prompt snapshot. If claude
-ignores the hint, the harness catches it anyway, which is the whole point.
-
 ## Install
 
 ```bash
@@ -60,10 +49,3 @@ reverted to the pre-prompt state. nothing committed.
 > exit
 bye.
 ```
-
-## Notes
-
-- Requires the `claude` CLI on PATH and git.
-- Operates on whatever git repo you run it in; it never creates or scaffolds a
-  project. Each accepted prompt is its own commit.
-- No third-party Go dependencies.
